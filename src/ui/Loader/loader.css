@@ -1,0 +1,14 @@
+.i-loader {
+    animation: load 1s both infinite;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+
+@keyframes load {
+    from {
+        transform: rotate(0);
+    } to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,317 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    background-color: antiquewhite;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.navitem {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    opacity: 0.5;
+    transition: opacity .3s;
+}
+
+.navitem:hover, .navitem.active {
+    opacity: 1;
+}
+
+.container {
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.main {
+    padding: 20px;
+}
+
+.form-group {
+    margin: 20px auto;
+}
+input.form-control {
+    background-color: transparent;
+    appearance: none;
+}
+.form-control {
+    display: block;
+    margin-top: 10px;
+    width: 100%;
+    height: 34px;
+    border-radius: 6px;
+    border: solid 1px lightgrey;
+    padding: 0 10px;
+}
+.form-control.textarea-control {
+    height: auto;
+}
+.form-control.inline {
+    margin-top: 0;
+}
+.list-line {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    gap: 10px;
+}
+.form-line {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.form-label {
+    margin: 20px 0;
+}
+
+.btn {
+    padding: 0 15px;
+    border-radius: 6px;
+    border: none;
+    background-color: transparent;
+    height: 34px;
+    cursor: pointer;
+}
+.btn[disabled] {
+    cursor: default;
+}
+.btn-primary {
+    background-color: rgb(88, 152, 173);
+    color: white;
+}
+.btn-primary:hover {
+    background-color: rgb(45, 137, 168);
+}
+.btn-primary[disabled] {
+    background-color: rgb(131, 159, 168);
+}
+.btn-danger {
+    background-color: rgb(255, 95, 95);
+    color: white;
+}
+.btn-danger:hover {
+    background-color: red;
+}
+.btn-danger[disabled] {
+    background-color: rgb(252, 173, 173);
+}
+.btn-success {
+    background-color: rgb(100, 255, 95);
+    color: white;
+}
+.btn-success:hover {
+    background-color: rgb(43, 255, 0);
+}
+.btn-success[disabled] {
+    background-color: rgb(169, 255, 166);;
+}
+
+.alert.alert-danger {
+    background-color: rgb(255, 217, 217);
+    color: red;
+    border: solid 2px red;
+    padding: 0 10px;
+    border-radius: 6px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+}
+
+.navuser {
+    margin-left: auto;
+    font-style: italic;
+    font-size: 0.8em;
+}
+.navuser strong {
+    font-style: normal;
+    margin-left: 0.3em;
+    text-transform: uppercase;
+}
+
+.login-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: antiquewhite;
+    padding: 10px 20px;
+}
+.login-navbar-item {
+    margin: 0;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.list-line .form-group {
+    margin: 0;
+}
+.list-line .form-control {
+    margin-top: 0;
+}
+.list-line .form-line {
+    align-items: flex-start;
+}
+
+.form-control.is-invalid {
+    border-color: red;
+}
+.form-error {
+    color: red;
+}
+
+
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+}
+
+.card {
+    flex: none;
+    width: 300px;
+    box-shadow: 0 0 4px black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    animation: fadeIn .5s both;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-bg.closing {
+    animation: fadeOut .5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        background-color: rgba(0, 0, 0, 0);
+    } to {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        background-color: rgba(0, 0, 0, 0.7);
+    } to {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+.modal-wrapper {
+    width: 400px;
+    height: 400px;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+    animation: slide .3s both;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+    padding: 10px 40px 10px 20px;
+    position: relative;
+    overflow-y: auto;
+}
+
+.modal-bg.closing .modal-wrapper {
+    animation: reverseSlide .3s both;
+}
+
+.modal-update-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.modal-closer {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    cursor: pointer;
+}
+
+.modal-closer .icon {
+    width: 2rem;
+    height: 2rem;
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(200px);
+        opacity: 0;
+    } to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes reverseSlide {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    } to {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+}
+
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.icon-left {
+    display: flex;
+    align-items: center;
+}
+
+.i-left {
+    margin-right: 5px;
+}
+
+.card-controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+
+.modal-wrapper .form-line.no-margin * {
+    margin: 0;
+}
+
+.modal-wrapper .form-line.no-margin {
+    margin: 20px 0;
+}
